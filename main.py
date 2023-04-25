@@ -100,7 +100,7 @@ class Freezer:
 
     def add_product(self, name: str, temp_max: float, temp_min: float) -> None:
         if (self.temp > temp_max) or (self.temp < temp_min):
-            print('Product can`t be added to Fridge')
+            print('Product can`t be added to Freezer')
             return
         product = Products(name, temp_max, temp_min)
         self.product_list.append(product)
