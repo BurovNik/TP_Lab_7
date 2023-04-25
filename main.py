@@ -51,10 +51,11 @@ Library_1.show_detail()
 
 
 class Products:
-    def __init__(self, name: str = 'Milk', temp_max: float = 0, temp_min: float =0) -> None:
+    def __init__(self, name: str = 'Milk', temp_max: float = 0, temp_min: float = 0) -> None:
         self.name = name
         self.temp_max = temp_max
         self.temp_min = temp_min
+
     def show_detail(self) -> None:
         print(self.name, self.temp_max, self.temp_min)
 
@@ -65,13 +66,12 @@ class Fridge:
         self.product_list = []
         self.temp = temp
 
-    def add_product(self, name: str, temp_max: float, temp_min : float) -> None:
+    def add_product(self, name: str, temp_max: float, temp_min: float) -> None:
         if (self.temp > temp_max) or (self.temp < temp_min):
             print('Product can`t be added to Fridge')
             return
         product = Products(name, temp_max, temp_min)
         self.product_list.append(product)
-
 
     def find_product(self, name: str) -> bool:
         for i in self.product_list:
@@ -95,7 +95,7 @@ class Freezer:
         self.temp = temp
         self.product_list = []
 
-    def add_product(self, name: str, temp_max: float, temp_min : float) -> None:
+    def add_product(self, name: str, temp_max: float, temp_min: float) -> None:
         if (self.temp > temp_max) or (self.temp < temp_min):
             print('Product can`t be added to Fridge')
             return
