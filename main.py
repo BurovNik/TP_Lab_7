@@ -24,10 +24,13 @@ class Library:
         self.BookList.append(Book(w, author, cost))
         self.curr_weight += w
 
-    def find_book(self, author: str) -> None:
+    def find_book(self, author: str) -> bool:
+        flag = False
         for it in self.BookList:
             if author == it.author:
                 it.show_detail()
+                flag = True
+        return flag
 
     def show_detail(self) -> None:
         print('max weight =', self.max_weight)
